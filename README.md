@@ -8,15 +8,15 @@ Optei por colocar todos os passos da utilização da forma mais detalhada aqui, 
 Após o clone do repositório, na raiz /:
 
 ```console
-user:~$ docker-compose up -d --build
+user@local:~$ docker-compose up -d --build
 ```
 Renomeie o .env.example para .env
 
 Acesse o container do php-fpm e rode as migrations: 
 ```console
-user:~$ docker ps
-user:~$ docker exec -it <ID_DO_CONTAINER> bash
-root@container-id:~ $php artisan migrate --seed
+user@local:~$ docker ps
+user@local:~$ docker exec -it <ID_DO_CONTAINER> bash
+root@container-id:~$ php artisan migrate --seed
 ```
 Isso fará com que o banco seja populado com 10 users, address, cities e states.
 
