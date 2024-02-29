@@ -205,6 +205,181 @@ Exemplo Status 201 - Created
 }
 ```
 
+### READ addresses
+
+``
+  GET http://localhost:8083/api/address
+``
+
+#### Query Params:
+
+É possível realizar a pesquisa enviando o id. A API retorna dados dos endereços da pesquisa e seus respectivos owners.
+O parâmetro id é opcional. Se estiver setado, a API retornará a consulta pesquisada. Caso contrário, a API retornará todos endereços.
+
+#### Responses:
+
+```javascript
+1) Exemplo Status 200 - Sucesso
+  {
+    "message": "Operação realizada com sucesso.",
+    "data": [
+        {
+            "id": 1,
+            "city_id": 5,
+            "street": "Runolfsson Manor",
+            "number": "560",
+            "zip_code": "94271-4922",
+            "address_owner": "Paulo Junior"
+        },
+        {
+            "id": 3,
+            "city_id": 2,
+            "street": "Kshlerin Turnpike",
+            "number": "64",
+            "zip_code": "03148",
+            "address_owner": "Marion Pfeffer"
+        }
+    ]
+}
+
+```
+#### Tratamento de erros:
+```javascript
+1) Pesquisar por usuários enviando os parâmetros não esperados:
+{
+    "id": [
+        "ID needs to be integer."
+    ]
+}
+```
+
+### CREATE user
+
+``
+  POST http://localhost:8083/api/address
+``
+
+#### Request body: x-www-form-urlencoded
+
+| Parâmetro   | Tipo       | Descrição                           |
+| :---------- | :--------- | :---------------------------------- |
+| `user_id` | `integer` | **Obrigatório**. ID do usuário |
+| `street` | `string` | **Obrigatório**. Nome do logradouro |
+| `number` | `string` | **Obrigatório**. Número do endereço |
+| `zip_code` | `string` | **Obrigatório**. Número do CEP/ZipCode |
+| `city_id` | `integer` | **Obrigatório**. Número do ID da cidade |
+
+#### Responses:
+
+```javascript
+Exemplo Status 201 - Created
+{
+    "message": "Operação realizada com sucesso.",
+    "data": {
+        "user_id": "1",
+        "street": "Rua Exemplo 2",
+        "number": "204",
+        "zip_code": "31020-021",
+        "city_id": "1",
+        "updated_at": "2024-02-29T12:55:03.000000Z",
+        "created_at": "2024-02-29T12:55:03.000000Z",
+        "id": 11
+    }
+}
+
+```
+#### Tratamento de erros:
+```javascript
+1) Parâmetros inválidos
+{
+    "user_id": [
+        "The user id field must be an integer."
+    ],
+    "city_id": [
+        "The city id field must be an integer."
+    ]
+}
+
+```
+
+### UPDATE address
+
+``
+  PUT http://localhost:8083/api/address
+``
+
+#### Request body: x-www-form-urlencoded
+
+| Parâmetro   | Tipo       | Descrição                           |
+| :---------- | :--------- | :---------------------------------- |
+| `id` | `integer` | **Obrigatório**. ID do endereço |
+| `user_id` | `integer` | **Opcional**. ID do usuário |
+| `street` | `string` | **Opcional**. Nome do logradouro |
+| `number` | `string` | **Opcional**. Número do endereço |
+| `zip_code` | `string` | **Opcional**. Número do CEP/ZipCode |
+| `city_id` | `integer` | **Opcional**. Número do ID da cidade |
+
+
+#### Responses:
+
+```javascript
+1) Exemplo Status 200 - Success
+{
+    "message": "Operação realizada com sucesso.",
+    "data": true
+}
+
+```
+#### Tratamento de erros:
+```javascript
+1) Parâmetros inválidos
+{
+    "user_id": [
+        "The user id field must be an integer."
+    ],
+    "city_id": [
+        "The city id field must be an integer."
+    ]
+}
+
+```
+
+### DELETE address
+
+``
+  DELETE http://localhost:8083/api/address
+``
+
+#### Request body: x-www-form-urlencoded
+
+| Parâmetro   | Tipo       | Descrição                           |
+| :---------- | :--------- | :---------------------------------- |
+| `id` | `string` | **Obrigatório**. ID do endereço |
+
+
+#### Responses:
+
+```javascript
+1) Exemplo Status 200 - Success
+ {
+    "message": "Operação realizada com sucesso.",
+    "data": true
+}
+
+
+```
+#### Tratamento de erros:
+```javascript
+1) User não encontrado
+{
+    "id": [
+        "ID needs to exist in users addresses."
+    ]
+}
+```
+
+
+
 #### Observação
 Database name: mentes-notaveis
 
