@@ -1,4 +1,4 @@
-Projeto de API REST feita em PHP 8.3 + Laravel 10 + MySql 8, com as seguintes funcionalidades: 
+## Projeto de API REST feita em PHP 8.3 + Laravel 10 + MySql 8. 
 
 O ambiente de desenvolvimento foi criado via Docker e está utilizando o Nginx como proxy reverso.
 
@@ -8,7 +8,9 @@ Suba o container: docker-compose up -d --build
 
 Em /api, renomeie o .env.example para .env
 
-Acesse o container do php-fpm com: 3.1) docker ps //para ver o id do container 3.2) docker exec -it <ID_DO_CONTAINER> bash
+Acesse o container do php-fpm com: 
+3.1) docker ps //para ver o id do container 
+3.2) docker exec -it <ID_DO_CONTAINER> bash
 
 Rode as migrations com as seeds dentro do container, em /api: php artisan migrate --seed
 
