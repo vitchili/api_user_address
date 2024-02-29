@@ -377,7 +377,64 @@ Exemplo Status 201 - Created
     ]
 }
 ```
+### READ cities
 
+``
+  GET http://localhost:8083/api/city
+``
+
+#### Query Params:
+
+É possível realizar a pesquisa enviando o parâmetro id. A API retorna dados das cidades da pesquisa de cidade com seu estado.
+O parâmetro é opcional. Se estiver setado, a API retornará a consulta pesquisada. Caso contrário, a API retornará todas cidades.
+
+#### Responses:
+
+```javascript
+1) Exemplo Status 200 - Sucesso
+  {
+    "message": "Operação realizada com sucesso.",
+    "data": {
+        "id": 1,
+        "state_id": 9,
+        "name": "Eddieberg",
+        "created_at": "2024-02-29T07:20:01.000000Z",
+        "updated_at": "2024-02-29T07:20:01.000000Z"
+    }
+}
+
+### READ states
+
+``
+  GET http://localhost:8083/api/state
+``
+
+#### Query Params:
+
+É possível realizar a pesquisa enviando o parâmetro id. A API retorna dados das cidades da pesquisa de estado.
+O parâmetro é opcional. Se estiver setado, a API retornará a consulta pesquisada. Caso contrário, a API retornará todos estados.
+
+#### Responses:
+
+```javascript
+1) Exemplo Status 200 - Sucesso
+ {
+    "message": "Operação realizada com sucesso.",
+    "data": [
+        {
+            "id": 1,
+            "name": "Alabama",
+            "created_at": "2024-02-29T07:20:01.000000Z",
+            "updated_at": "2024-02-29T07:20:01.000000Z"
+        },
+        {
+            "id": 2,
+            "name": "Arkansas",
+            "created_at": "2024-02-29T07:20:01.000000Z",
+            "updated_at": "2024-02-29T07:20:01.000000Z"
+        }
+     ]
+  }
 
 
 #### Observação
