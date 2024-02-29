@@ -5,17 +5,17 @@ O ambiente de desenvolvimento foi criado via Docker e está utilizando o serviç
 Optei por colocar todos os passos da utilização da forma mais detalhada aqui, para evitar que hajam pré-requisitos de conhecimentos independente de quem serão os utilizadores dessa API.
 
 ### Guia de utilização
-Após o clone do repositório, na raiz /:
+Após o clone do repositório, na raiz do projeto /:
 
 ```console
-user@local:~$ docker-compose up -d --build
+$ docker-compose up -d --build
 ```
 Renomeie o .env.example para .env
 
 Acesse o container do php-fpm e rode as migrations: 
 ```console
-user@local:~$ docker ps
-user@local:~$ docker exec -it <ID_DO_CONTAINER> bash
+$ docker ps
+$ docker exec -it <ID_DO_CONTAINER> bash
 root@container-id:~$ php artisan migrate --seed
 ```
 Isso fará com que o banco seja populado com 10 users, address, cities e states.
