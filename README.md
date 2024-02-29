@@ -130,8 +130,6 @@ Exemplo Status 201 - Created
   PUT http://localhost:8083/api/user
 ``
 
-#### Authorization: Bearer [token_de_retorno_da_rota_/login]
-
 #### Request body: x-www-form-urlencoded
 
 | Parâmetro   | Tipo       | Descrição                           |
