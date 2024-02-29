@@ -49,6 +49,9 @@ class Address extends Authenticatable
                 'a.zip_code',
                 'u.name AS address_owner',
             ])
+            ->when(isset($params['id']) && $params['id'] > 0, function (Builder $query) use ($params) {
+                return $query->where('a.id', '=', $params['id']);
+            })
             ->when(isset($params['user_id']) && $params['user_id'] > 0, function (Builder $query) use ($params) {
                 return $query->where('user_id', '=', $params['user_id']);
             })
