@@ -402,6 +402,7 @@ O parâmetro é opcional. Se estiver setado, a API retornará a consulta pesquis
         "updated_at": "2024-02-29T07:20:01.000000Z"
     }
 }
+```
 
 ### READ states
 
@@ -435,7 +436,7 @@ O parâmetro é opcional. Se estiver setado, a API retornará a consulta pesquis
         }
      ]
   }
-
+```
 
 #### Observação
 Database name: mentes-notaveis
