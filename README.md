@@ -1,19 +1,23 @@
 ## Projeto de API REST: User & Address. PHP 8.2 + Laravel 10 + MySql 8
 
-O ambiente de desenvolvimento foi criado via Docker e está utilizando o Nginx como proxy reverso.
+O ambiente de desenvolvimento foi criado via Docker e está utilizando o serviço Nginx como proxy reverso.
 
-Para utilizar, após o clone do repositório:
+Optei por colocar todos os passos da utilização da forma mais detalhada aqui, para evitar que hajam pré-requisitos de conhecimentos independente de quem serão os utilizadores dessa API.
 
-Suba o container: docker-compose up -d --build
+### Guia de utilização
+Após o clone do repositório, na raiz /:
 
-Em /api, renomeie o .env.example para .env
+```console
+docker-compose up -d --build
+```
+Renomeie o .env.example para .env
 
-Acesse o container do php-fpm com: 
-3.1) docker ps //para ver o id do container 
-3.2) docker exec -it <ID_DO_CONTAINER> bash
-
-Rode as migrations com as seeds dentro do container, em /api: php artisan migrate --seed
-
+Acesse o container do php-fpm e rode as migrations: 
+```console
+docker ps
+docker exec -it <ID_DO_CONTAINER> bash
+php artisan migrate --seed
+```
 Isso fará com que o banco seja populado com 10 users, address, cities e states.
 
 
