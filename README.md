@@ -1,4 +1,4 @@
-## Projeto de API REST feita em PHP 8.2 + Laravel 10 + MySql 8. 
+## Projeto de API REST: User & Address feita em PHP 8.2 + Laravel 10 + MySql 8. 
 
 O ambiente de desenvolvimento foi criado via Docker e está utilizando o Nginx como proxy reverso.
 
